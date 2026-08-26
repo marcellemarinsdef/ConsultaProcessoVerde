@@ -6,6 +6,7 @@ using DotNetEnv;
 using GatewayConsultaApiVerde;
 using GatewayConsultaApiVerde.Services.Agendamento;
 using GatewayConsultaApiVerde.Services.Agendamentos;
+using GatewayConsultaApiVerde.Services.Apenado;
 using GatewayConsultaApiVerde.Services.Assistido;
 using GatewayConsultaApiVerde.Services.Assunto;
 using GatewayConsultaApiVerde.Services.Bloqueio;
@@ -52,6 +53,7 @@ builder.Services
         options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(45);
     });
 
+builder.Services.AddScoped<IApenadoService, ApenadoService>();
 builder.Services.AddScoped<IAssistidoService, AssistidoService>();
 builder.Services.AddScoped<ICasosService, CasosService>();
 builder.Services.AddScoped<IAgendamentosService, AgendamentosService>();
